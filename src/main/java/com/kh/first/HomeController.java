@@ -1,11 +1,12 @@
 package com.kh.first;
 
-import java.text.DateFormat;
+import java.text.DateFormat; 
 import java.util.Date;
 import java.util.Locale;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -36,7 +37,7 @@ public class HomeController {
 		return "index";
 	}
 	
-	@RequestMapping(value="/projects",method = RequestMethod.GET)
+	@RequestMapping(value="./projects",method = RequestMethod.GET)
 	public String projects(Locale locale , Model model) {
 		logger.info("The client locale is {}.", locale);
 		
