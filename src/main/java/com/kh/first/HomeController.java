@@ -36,4 +36,12 @@ public class HomeController {
 		return "index";
 	}
 	
+	@RequestMapping(value="/projects",method = RequestMethod.GET)
+	public String projects(Locale locale , Model model) {
+		logger.info("The client locale is {}.", locale);
+		
+		return "projects";
+	}
+	
+	
 }

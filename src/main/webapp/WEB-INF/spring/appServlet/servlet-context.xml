@@ -9,20 +9,21 @@
 
 	<!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
 	
-	<!-- Enables the Spring MVC @Controller programming model -->
+	<!-- 1. 어노테이션을 이용해서 컨트롤한다고 선언. -->
 	<annotation-driven />
 
 	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
 	
-	<!-- 1. css , js 파일 등은 resources 폴더 밑에 기본적으로 모여있음. -->
+	<!-- 2. css , js 파일 등은 resources 폴더 밑에 기본적으로 모여있음. -->
 	<resources mapping="/resources/**" location="/resources/" />
 
-	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
+	<!-- 3. views 와 하위에 있는 jsp 매핑.-->
 	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<beans:property name="prefix" value="/WEB-INF/views/" />
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
+	<!-- 4. 지정된 베이스 패키지 밑에 있는 어노테이션을 스캔해서 빈으로 등로 -->
 	<context:component-scan base-package="com.kh.first" />
 	
 	
